@@ -1,0 +1,49 @@
+<div class="container mt-5 ">
+    <div class="row">
+      <div class="col align-self-start">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+      <div class="col align-self-center">
+  
+      </div>
+      <div class="col align-self-end">
+        <button type="button" class="btn btn-primary" [routerLink]="['/add']">Add &nbsp;<i class="bi bi-plus-circle"></i></button>
+      </div>
+    </div>
+  
+    <div class="row mt-4">
+  
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Duedate</th>
+            <th scope="col">priority</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of tasks">
+            <th scope="row">{{task.id}}</th>
+            <td>{{task.title}}</td>
+            <td>{{task.description}}</td>
+            <td>{{task.duedate}}</td>
+            <td>{{task.priority}}</td>
+            <td><button (click)="onDelete(task.id)" class="btn btn-danger">Delete &nbsp;<i
+                  class="bi bi-x-lg"></i></button>&nbsp;
+              <button (click)="onEdit(task.id)" class="btn btn-secondary" >Edit &nbsp;<i
+                  class="bi bi-vector-pen"></i></button>
+            </td>
+          </tr>
+  
+        </tbody>
+      </table>
+    </div>
+  
+  </div>
+  

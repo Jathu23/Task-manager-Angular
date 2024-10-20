@@ -1,0 +1,33 @@
+<div class="container mt-5 col-4">
+    <form class="row g-3">
+        <div class="col-12">
+           <h4>Edit a Task</h4>
+        </div>
+
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">Title</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Yoru Title Here">
+        </div>
+        <div class="col-12">
+            <label for="inputAddress2" class="form-label">Description </label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Description">
+        </div>
+        <div class="col-12">
+            <label for="inputAddress2" class="form-label">DeuDate </label>
+            <input type="date" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="col-12">
+            <label for="inputState" class="form-label">priority</label>
+            <select id="inputState" class="form-select">
+              <option selected>Low</option>
+              <option>Mid</option>
+              <option >High</option>
+            </select>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Update</button>&nbsp; &nbsp;
+            <button type="submit" class="btn btn-secondary" [routerLink]="['']">Cancel &nbsp;<i class="bi bi-box-arrow-in-left"></i></button>
+        </div>
+    </form>
+</div>

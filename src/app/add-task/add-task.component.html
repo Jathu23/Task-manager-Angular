@@ -1,24 +1,24 @@
 <div class="container mt-5 col-4">
-    <form class="row g-3">
+    <form [formGroup]="taskform" (ngSubmit)="onSumit()" class="row g-3">
         <div class="col-12">
            <h4>Add a New Task</h4>
         </div>
 
         <div class="col-12">
             <label for="inputAddress" class="form-label">Title</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Yoru Title Here">
+            <input type="text" class="form-control" id="inputAddress" placeholder="Yoru Title Here" formControlName="title">
         </div>
         <div class="col-12">
             <label for="inputAddress2" class="form-label">Description </label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Description">
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Description" formControlName="description">
         </div>
         <div class="col-12">
             <label for="inputAddress2" class="form-label">DeuDate </label>
-            <input type="date" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            <input type="date" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" formControlName="dueDate">
         </div>
         <div class="col-12">
             <label for="inputState" class="form-label">priority</label>
-            <select id="inputState" class="form-select">
+            <select id="inputState" class="form-select" formControlName="priority">
               <option selected>Low</option>
               <option>Mid</option>
               <option >High</option>
@@ -26,8 +26,8 @@
         </div>
 
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">Add</button>&nbsp; &nbsp;
-            <button type="submit" class="btn btn-secondary">Cancel &nbsp;<i class="bi bi-box-arrow-in-left"></i></button>
+            <button type="submit" class="btn btn-primary" (click)="onSumit()">Add</button>&nbsp; &nbsp;
+            <button type="submit" class="btn btn-secondary"  (click)="onCancel()" [routerLink]="['']">Cancel &nbsp;<i class="bi bi-box-arrow-in-left"></i></button>
         </div>
     </form>
 </div>

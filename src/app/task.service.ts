@@ -15,4 +15,9 @@ return this.http.get<any[]>(this.url);
 deleteTask(id:number){
 return this.http.delete(this.url+"?id="+id)
 }
+
+addtask(task:any){
+  return this.http.post(this.url,task);
+}
+
 }
