@@ -11,6 +11,20 @@ export class AppComponent implements OnInit{
 
   constructor(private task : TaskService){}
 
+onDelete(id:number) {
+this.task.deleteTask(id).subscribe(d=>{
+  alert("delete");
+console.log(d);
+})
+
+}
+onEdit(id: number) {
+ alert(id);
+  }
+
+
+  
+
 tasks :any[] =[];
 
 ngOnInit(): void {
