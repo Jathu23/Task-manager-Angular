@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskService } from '../task.service';
+import { TaskService, task } from '../task.service';
 import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-task-list',
@@ -14,10 +14,10 @@ constructor(private task : TaskService ,private router: Router){}
 onDelete(id:number) {
 this.task.deleteTask(id).subscribe(d=>{
   alert("delete");
-console.log(d);
+
 this.task.getTasks().subscribe(data => {
   this.tasks=data;
-  console.log(this.tasks);
+  
 });
 })
 
@@ -26,12 +26,12 @@ onEdit(id: number) {
   this.router.navigate(['/edit', id])
   }
 
-tasks :any[] =[];
+tasks :task[] =[];
 
 ngOnInit(): void {
   this.task.getTasks().subscribe(data => {
     this.tasks=data;
-    console.log(this.tasks);
+   
   });
   
 }

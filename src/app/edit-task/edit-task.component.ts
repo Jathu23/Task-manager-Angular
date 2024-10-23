@@ -19,8 +19,8 @@ export class EditTaskComponent  implements OnInit {
       this.taskId = Number(tid);
   
       this.taskForm = this.fb.group({
-        id: [''],
-        title: ['', [Validators.required]],
+        id: [2534],
+        title: ['sfgsfgsfgsfg', [Validators.required]],
         description: [''],
         dueDate: [''],
         priority: ['', [Validators.required]],
@@ -28,8 +28,28 @@ export class EditTaskComponent  implements OnInit {
     }
 
   ngOnInit(): void {
-    this.taskService.getTasks().subscribe(d =>{
-      
+   this.taskService.getsingleTask(this.taskId).subscribe(d => {
+    
+    console.log(d);
+    this.taskForm.patchValue({
+      id : d.id,
+      title: d.title,
+      description:d.description,
+      deuDate:d.deuDate,
+      priority: d.priority
+
+    })
+
+   })
+  }
+
+
+  onSubmit(){
+    const task = this.taskForm.value;
+
+    this.taskService.updateTask(task).subscribe((data: any)=>{
+        alert("Update Successfully");
+        this.router.navigate(["/"]);
     })
   }
   
