@@ -1,0 +1,30 @@
+<div class="container mt-5 col-4">
+    <form [formGroup]="edituserform" (ngSubmit)="onSumit()" class="row g-3">
+        <div class="col-12">
+           <h4>Update User Info</h4>
+        </div>
+
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">Name</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Yoru Name Here" formControlName="name">
+        </div>
+        <div class="col-12">
+            <label for="inputAddress2" class="form-label">Email </label>
+            <input type="email" class="form-control" id="inputAddress2" placeholder="Email" formControlName="email">
+        </div>
+        <div class="col-12">
+            <label for="inputAddress2" class="form-label">Password </label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Password" formControlName="password">
+        </div>
+        <div class="col-12">
+            <label for="inputState" class="form-label">PhoneNumber</label>
+            <input type="tel" class="form-control" id="inputAddress3" placeholder="PhoneNumber" formControlName="phone">
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary" >Update</button>&nbsp; &nbsp;
+            <button type="submit" class="btn btn-secondary"  (click)="onCancel()" [routerLink]="['']">Cancel &nbsp;<i class="bi bi-box-arrow-in-left"></i></button>
+        </div>
+    </form>
+</div>
+

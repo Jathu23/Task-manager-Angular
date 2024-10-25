@@ -23,7 +23,7 @@ this.task.getTasks().subscribe(data => {
 
 }
 onEdit(id: number) {
-  this.router.navigate(['/edit', id])
+  this.router.navigate(['/taskedit', id])
   }
 
 tasks :task[] =[];

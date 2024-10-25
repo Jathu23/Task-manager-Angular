@@ -15,7 +15,7 @@ export class EditTaskComponent  implements OnInit {
   constructor(private route: ActivatedRoute, private taskService: TaskService,
     private fb: FormBuilder, private router: Router) {
 
-      const tid = this.route.snapshot.paramMap.get("id");
+      const tid = this.route.snapshot.paramMap.get("Tid");
       this.taskId = Number(tid);
   
       this.taskForm = this.fb.group({

@@ -10,7 +10,7 @@
   
       </div>
       <div class="col align-self-end">
-        <button type="button" class="btn btn-primary" [routerLink]="['/taskadd']">Add &nbsp;<i class="bi bi-plus-circle"></i></button>
+        <button type="button" class="btn btn-primary" [routerLink]="['/adduser']">Add &nbsp;<i class="bi bi-plus-circle"></i></button>
       </div>
     </div>
   
@@ -20,23 +20,24 @@
         <thead>
           <tr>
             <th scope="col">Id</th>
-            <th scope="col">Title</th>
-            <th scope="col">Description</th>
-            <th scope="col">Duedate</th>
-            <th scope="col">priority</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">PassWord</th>
+            <th scope="col">PhoneNumber</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let task of tasks">
-            <th scope="row">{{task.id}}</th>
-            <td>{{task.title}}</td>
-            <td>{{task.description}}</td>
-            <td>{{task.deuDate | date }}</td>
-            <td>{{task.priority}}</td>
-            <td><button (click)="onDelete(task.id)" class="btn btn-danger">Delete &nbsp;<i
+          <tr *ngFor="let user of users">
+            <th scope="row">{{user.id}}</th>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.phonenumber }}</td>
+          
+            <td><button (click)="onDelete(user.id)" class="btn btn-danger">Delete &nbsp;<i
                   class="bi bi-x-lg"></i></button>&nbsp;
-              <button (click)="onEdit(task.id)" class="btn btn-secondary" >Edit &nbsp;<i
+              <button (click)="onEdit(user.id)" class="btn btn-secondary" >Edit &nbsp;<i
                   class="bi bi-vector-pen"></i></button>
             </td>
           </tr>

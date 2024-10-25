@@ -12,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TasklistComponent } from './tasklist/tasklist.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
+import { UserlistComponent } from './userlist/userlist.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 
 
@@ -21,7 +24,10 @@ import { EditTaskComponent } from './edit-task/edit-task.component';
 AppComponent,
 TasklistComponent,
 AddTaskComponent,
-EditTaskComponent
+EditTaskComponent,
+UserlistComponent,
+AddUserComponent,
+EditUserComponent
    
   
 
