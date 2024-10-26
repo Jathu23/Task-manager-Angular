@@ -19,8 +19,8 @@ export class EditTaskComponent  implements OnInit {
       this.taskId = Number(tid);
   
       this.taskForm = this.fb.group({
-        id: [2534],
-        title: ['sfgsfgsfgsfg', [Validators.required]],
+        id: [],
+        title: ['', [Validators.required]],
         description: [''],
         dueDate: [''],
         priority: ['', [Validators.required]],
@@ -35,14 +35,13 @@ export class EditTaskComponent  implements OnInit {
       id : d.id,
       title: d.title,
       description:d.description,
-      deuDate:d.deuDate,
+      deuDate:d.dueDate,
       priority: d.priority
 
     })
 
    })
   }
-
 
   onSubmit(){
     const task = this.taskForm.value;

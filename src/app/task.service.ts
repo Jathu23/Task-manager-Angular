@@ -33,7 +33,8 @@ export interface task{
   id:number;
   title: string;
   description: string;
-  deuDate:string;
+  dueDate:string;
   priority: string
+  
 
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { UserService, user } from '../user.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-user',
@@ -7,40 +9,43 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrl: './edit-user.component.css'
 })
 export class EditUserComponent {
-  userid = 12;
+  userId:number;
 
-  users: any =[
-    {id:12,name:"user01",email: "U1@gmail.com",password:"123U1",phonenumber:123451},
-    {id:13,name:"user02",email: "U2@gmail.com",password:"123U2",phonenumber:123452},
-  ]
+  constructor(private route: ActivatedRoute, private userS : UserService){
+    const uid = this.route.snapshot.paramMap.get("Uid");
+    this.userId = Number(uid);
 
-
+  }
   edituserform = new FormGroup({
-
+    id: new FormControl(), 
     name: new FormControl(''), 
     email: new FormControl(''),
     password: new FormControl(''),
-    phone: new FormControl('')
+    phonenumber: new FormControl('')
 
   });
-
-
   ngOnInit(): void {
-    const user = this.users[0];
-
-    this.edituserform.patchValue({
-      name:user.name,
-      email:user.email,
-      password:user.password,
-      phone:user.phonenumber
-
-    });
+     this.userS.getsingleUser(this.userId).subscribe(user =>{
+      this.edituserform.patchValue({
+        id : user.id,
+        name:user.name,
+        email:user.email,
+        password:user.password,
+        phonenumber:user.phonenumber
+  
+      });
+    })
   }
+
 onCancel() {
 throw new Error('Method not implemented.');
 }
 onSumit() {
-throw new Error('Method not implemented.');
+const Uuser = this.edituserform.value;
+this.userS.updateUser(Uuser).subscribe(u =>{
+  console.log(u); 
+  alert("Update Successfully"); 
+})
 }
 
 }

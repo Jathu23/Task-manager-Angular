@@ -32,7 +32,7 @@
             <th scope="row">{{task.id}}</th>
             <td>{{task.title}}</td>
             <td>{{task.description}}</td>
-            <td>{{task.deuDate | date }}</td>
+            <td>{{task.dueDate | date }}</td>
             <td>{{task.priority}}</td>
             <td><button (click)="onDelete(task.id)" class="btn btn-danger">Delete &nbsp;<i
                   class="bi bi-x-lg"></i></button>&nbsp;

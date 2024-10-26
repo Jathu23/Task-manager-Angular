@@ -9,7 +9,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  // { path: '', component: AppComponent },
+  { path: '', component: TasklistComponent },
   { path: 'tasklist', component: TasklistComponent },
   { path: 'taskadd', component: AddTaskComponent },
   { path: 'taskedit/:Tid', component: EditTaskComponent },

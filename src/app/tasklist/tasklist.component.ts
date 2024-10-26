@@ -30,6 +30,10 @@ tasks :task[] =[];
 
 ngOnInit(): void {
   this.task.getTasks().subscribe(data => {
+    console.log(data
+      
+    );
+    
     this.tasks=data;
    
   });
