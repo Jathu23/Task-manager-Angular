@@ -13,7 +13,6 @@ return this.http.get<task []>(this.url);
 }
 getsingleTask(id:number){
   return this.http.get<task> (this.url+"/single?id="+id);
- 
 }
 
 deleteTask(id:number){
@@ -35,6 +34,4 @@ export interface task{
   description: string;
   dueDate:string;
   priority: string
-  
-
 }

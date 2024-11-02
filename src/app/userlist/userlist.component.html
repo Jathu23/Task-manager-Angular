@@ -29,13 +29,13 @@
         </thead>
         <tbody>
           <tr *ngFor="let user of users">
-            <th scope="row">{{user.id}}</th>
+            <th scope="row">{{user.userId}}</th>
             <td>{{user.name}}</td>
             <td>{{user.email}}</td>
             <td>{{user.password}}</td>
             <td>{{user.phonenumber }}</td>
           
-            <td><button (click)="onDelete(user.id)" class="btn btn-danger">Delete &nbsp;<i
+            <td><button (click)="onDelete(user.userId)" class="btn btn-danger">Delete &nbsp;<i
                   class="bi bi-x-lg"></i></button>&nbsp;
               <button (click)="onEdit(user.id)" class="btn btn-secondary" >Edit &nbsp;<i
                   class="bi bi-vector-pen"></i></button>
