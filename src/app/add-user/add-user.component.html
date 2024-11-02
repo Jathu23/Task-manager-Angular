@@ -1,29 +1,73 @@
-<div class="container mt-5 col-4">
-    <form [formGroup]="userform" (ngSubmit)="onSumit()" class="row g-3">
-        <div class="col-12">
-           <h4>Add a New User</h4>
+
+<div class="container col d-flex justify-content-center">
+    <div class="row">
+
+        <div class="col-4">
+            <div class=" col-12">
+                <form [formGroup]="userform" class="row g-3">
+                    <div class="col-12">
+                       <h4>Add a New User</h4>
+                    </div>
+            
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Yoru Name Here" formControlName="name">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress2" class="form-label">Email </label>
+                        <input type="email" class="form-control" id="inputAddress2" placeholder="Email" formControlName="email">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress2" class="form-label">Password </label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Password" formControlName="password">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputState" class="form-label">PhoneNumber</label>
+                        <input type="tel" class="form-control" id="inputAddress3" placeholder="PhoneNumber" formControlName="phonenumber">
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+        <div class="col-6">
+            <div class=" col-6">
+                <div  [formGroup]="taskform" (ngSubmit)="onSumit()" class="row g-3">
+                    <div class="col-12">
+                       <h4>Add a  Task For User</h4>
+                    </div>
+            
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Yoru Title Here" formControlName="title">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress2" class="form-label">Description </label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Description" formControlName="description">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress2" class="form-label">DeuDate </label>
+                        <input type="date" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" formControlName="dueDate">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputState" class="form-label">priority</label>
+                        <select id="inputState" class="form-select" formControlName="priority">
+                            <option value="High" >High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="col-12">
-            <label for="inputAddress" class="form-label">Name</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Yoru Name Here" formControlName="name">
-        </div>
-        <div class="col-12">
-            <label for="inputAddress2" class="form-label">Email </label>
-            <input type="email" class="form-control" id="inputAddress2" placeholder="Email" formControlName="email">
-        </div>
-        <div class="col-12">
-            <label for="inputAddress2" class="form-label">Password </label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Password" formControlName="password">
-        </div>
-        <div class="col-12">
-            <label for="inputState" class="form-label">PhoneNumber</label>
-            <input type="tel" class="form-control" id="inputAddress3" placeholder="PhoneNumber" formControlName="phonenumber">
-        </div>
+    </div>
+</div>
 
+    <div class="row mt-4">
         <div class="col-12">
-            <button type="submit" class="btn btn-primary" >Add</button>&nbsp; &nbsp;
+            <button type="submit"  (click)="onSumit()" class="btn btn-primary" >Add</button>&nbsp; &nbsp;
             <button type="submit" class="btn btn-secondary"  (click)="onCancel()" [routerLink]="['']">Cancel &nbsp;<i class="bi bi-box-arrow-in-left"></i></button>
         </div>
-    </form>
-</div>
+    </div>
+
+

@@ -19,11 +19,18 @@
         <div class="col-12">
             <label for="inputState" class="form-label">priority</label>
             <select id="inputState" class="form-select" formControlName="priority">
-              <option selected>Low</option>
-              <option>Mid</option>
-              <option >High</option>
+                <option value="High" >High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
             </select>
         </div>
+        <div class="mb-3">
+            <label for="usersDrop" class="form-label">Users</label>
+            <select class="form-control" id="usersDrop" formControlName="userId">
+              <option *ngFor="let user of users" [value]="user.userId">{{user.name}}</option>
+            </select>
+          </div>
+          
 
         <div class="col-12">
             <button type="submit" class="btn btn-primary" >Add</button>&nbsp; &nbsp;

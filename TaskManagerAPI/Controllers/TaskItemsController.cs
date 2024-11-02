@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TaskManagerAPI.Controllers
@@ -21,7 +22,15 @@ namespace TaskManagerAPI.Controllers
             var data = taskContext.TaskItems.ToList();
             return Ok(data);
         }
-        [HttpGet ("single")]
+    [HttpGet("g2")]
+    public IActionResult Get2()
+    {
+      var data = taskContext.TaskItems.Include(t => t.userId).ToList(); // Include `User` entity
+      return Ok(data);
+    }
+
+
+    [HttpGet ("single")]
         public IActionResult Get(int id)
         {
             var data = taskContext.TaskItems.FirstOrDefault(x => x.Id == id);

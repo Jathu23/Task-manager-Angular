@@ -27,7 +27,7 @@ export class EditUserComponent {
   ngOnInit(): void {
      this.userS.getsingleUser(this.userId).subscribe(user =>{
       this.edituserform.patchValue({
-        id : user.id,
+        id : user.userId,
         name:user.name,
         email:user.email,
         password:user.password,

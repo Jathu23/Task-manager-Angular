@@ -6,36 +6,36 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
   url = 'http://localhost:5067/api/Users';
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getUsers(){
-    return this.http.get<user []>(this.url);
-    }
+  getUsers() {
+    return this.http.get<user[]>(this.url);
+  }
 
-    getsingleUser(id:number){
-      return this.http.get<user> (this.url+"/single?id="+id);
-   
+  getsingleUser(id: number) {
+    return this.http.get<user>(this.url + "/single?id=" + id);
 
-    }
-
-    addUser(user:any){
-      return this.http.post<user>(this.url,user)
-    }
-    updateUser(user:any){
-      return this.http.put(this.url,user);
-    }
-    deleteUser(id:number){
-      return this.http.delete(this.url+"?id="+id)
-    }
 
   }
 
+  addUser(user: any) {
+    return this.http.post<user>(this.url, user)
+  }
+  updateUser(user: any) {
+    return this.http.put(this.url, user);
+  }
+  deleteUser(id: number) {
+    return this.http.delete(this.url + "?id=" + id)
+  }
 
-export interface user{
-  id :number;
+}
+
+
+export interface user {
+  userId: number;
   name: string;
   email: string;
-  password:string;
+  password: string;
   phonenumber: string;
 
 }
