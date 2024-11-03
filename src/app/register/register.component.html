@@ -1,0 +1,45 @@
+
+
+    <div class="col-4">
+        <div class=" col-12">
+            <form [formGroup]="registerForm" class="row g-3" (ngSubmit)="onSumit()">
+                <div class="col-12">
+                   <h4>Sign Up</h4>
+                </div>
+        
+                <div class="col-12">
+                    <label for="fullName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="Yoru Name Here" formControlName="fullName">
+                </div>
+                <div class="col-12">
+                    <label for="email" class="form-label">Email </label>
+                    <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+                </div>
+                <div class="col-12">
+                    <label for="password" class="form-label">Password </label>
+                    <input type="text" class="form-control" id="password" placeholder="Password" formControlName="password">
+                </div>
+                <div class="col-12">
+                    <label for="cpassword" class="form-label">PhoneNumber</label>
+                    <input type="tel" class="form-control" id="cpassword" placeholder="cpassword" formControlName="cpassword">
+                </div>
+                <div class="col-12">
+                    <label for="inputState" class="form-label">priority</label>
+                    <select id="inputState" class="form-select" formControlName="priority">
+                        <option value="" selected>Select Role</option>
+                        <option value="Admin" >Admin</option>
+                        <option value="Editor">Editor</option>
+                        <option value="Viewer">Viewer</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <input type="checkbox">
+                    <label for="" formControlName="trems"  value="true" >trems</label>
+                </div>
+                <div class="col-12">
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    

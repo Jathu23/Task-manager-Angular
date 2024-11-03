@@ -1,0 +1,26 @@
+<div class="col-4">
+    <div class=" col-12">
+        <form [formGroup]="Loginform" class="row g-3" (ngSubmit)="onSumit()">
+            <div class="col-12">
+               <h4>Sign in</h4>
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email </label>
+                <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+            </div>
+            <div class="col-12">
+                <label for="password" class="form-label">Password </label>
+                <input type="text" class="form-control" id="password" placeholder="Password" formControlName="password">
+            </div>
+            <div class="col-12">
+
+                <input type="checkbox">
+                <label for="">Rember me</label>
+            </div>
+      
+            <div class="col-12">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</div>

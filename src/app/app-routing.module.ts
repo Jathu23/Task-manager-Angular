@@ -7,9 +7,10 @@ import { UserlistComponent } from './userlist/userlist.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', component: TasklistComponent },
+  { path: '', component: LoginComponent },
   { path: 'tasklist', component: TasklistComponent },
   { path: 'taskadd', component: AddTaskComponent },
   { path: 'taskedit/:Tid', component: EditTaskComponent },

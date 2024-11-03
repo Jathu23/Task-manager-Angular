@@ -15,6 +15,8 @@ import { EditTaskComponent } from './edit-task/edit-task.component';
 import { UserlistComponent } from './userlist/userlist.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -27,7 +29,9 @@ AddTaskComponent,
 EditTaskComponent,
 UserlistComponent,
 AddUserComponent,
-EditUserComponent
+EditUserComponent,
+RegisterComponent,
+LoginComponent
    
   
 
