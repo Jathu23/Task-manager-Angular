@@ -12,8 +12,8 @@ using TaskManagerAPI;
 namespace TaskManagerAPI.Migrations
 {
     [DbContext(typeof(TaskContext))]
-    [Migration("20241102063706_first")]
-    partial class first
+    [Migration("20241103063032_fefef")]
+    partial class fefef
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,8 +45,8 @@ namespace TaskManagerAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateOnly>("dueDate")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("dueDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int?>("userId")
                         .HasColumnType("int");
@@ -56,38 +56,6 @@ namespace TaskManagerAPI.Migrations
                     b.HasIndex("userId");
 
                     b.ToTable("TaskItems");
-                });
-
-            modelBuilder.Entity("TaskManagerAPI.address", b =>
-                {
-                    b.Property<int>("addressId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("addressId"));
-
-                    b.Property<string>("addressLine1")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("addressLine2")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("city")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("userId")
-                        .HasColumnType("int");
-
-                    b.HasKey("addressId");
-
-                    b.HasIndex("userId")
-                        .IsUnique()
-                        .HasFilter("[userId] IS NOT NULL");
-
-                    b.ToTable("address");
                 });
 
             modelBuilder.Entity("TaskManagerAPI.user", b =>
@@ -128,20 +96,8 @@ namespace TaskManagerAPI.Migrations
                     b.Navigation("user");
                 });
 
-            modelBuilder.Entity("TaskManagerAPI.address", b =>
-                {
-                    b.HasOne("TaskManagerAPI.user", "user")
-                        .WithOne("Address")
-                        .HasForeignKey("TaskManagerAPI.address", "userId");
-
-                    b.Navigation("user");
-                });
-
             modelBuilder.Entity("TaskManagerAPI.user", b =>
                 {
-                    b.Navigation("Address")
-                        .IsRequired();
-
                     b.Navigation("TaskItem");
                 });
 #pragma warning restore 612, 618

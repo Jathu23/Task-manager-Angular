@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace TaskManagerAPI
 {
@@ -11,7 +11,7 @@ namespace TaskManagerAPI
         public string password { get; set; }
         public string phonenumber { get; set; }
         public ICollection<TaskItem>? TaskItem { get; set; }
-        public address? Address { get; set; }
+        //public address? Address { get; set; }
 
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace TaskManagerAPI
 {
@@ -9,7 +9,7 @@ namespace TaskManagerAPI
         [Required]
         public string Title { get; set; }
         public string Description { get; set; }
-        public DateOnly dueDate { get; set; }
+        public DateTime dueDate { get; set; }
         [Required]
         public string Priority { get; set; }
         public int? userId { get; set; }

@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TaskManagerAPI.Controllers
@@ -42,7 +42,7 @@ namespace TaskManagerAPI.Controllers
 
             _taskContext.Users.Add(newUser);
             _taskContext.SaveChanges();
-            return CreatedAtAction(nameof(Get), new { id = newUser.userId }, newUser);
+            return Ok("user added");
         }
 
         [HttpDelete]

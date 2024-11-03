@@ -19,15 +19,11 @@ namespace TaskManagerAPI.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var data = taskContext.TaskItems.ToList();
+            var data = taskContext.TaskItems.Include(i=>i.user).ToList();
             return Ok(data);
         }
-    [HttpGet("g2")]
-    public IActionResult Get2()
-    {
-      var data = taskContext.TaskItems.Include(t => t.userId).ToList(); // Include `User` entity
-      return Ok(data);
-    }
+
+    
 
 
     [HttpGet ("single")]
